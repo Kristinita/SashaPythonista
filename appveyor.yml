@@ -16,4 +16,4 @@ install:
 
 build_script:
 
-  - cmd: "%PYTHON3%\\python KristinitaLuckyLinkTest.py"
+  - cmd: "%PYTHON%\\python KristinitaLuckyLinkTest.py"
