@@ -10,6 +10,7 @@ environment:
 install:
 
   - cmd: "%PIP% install --disable-pip-version-check --user --upgrade pip"
+  - cmd: "%PIP% install requests"
   - cmd: "%PIP% install lxml"
   - cmd: "%PIP% install beautifulsoup4"
   - cmd: "%PIP% install w3lib"
