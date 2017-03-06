@@ -28,7 +28,7 @@ remove_duckduckgo_symbols = first_link.replace("/l/?kh=-1&uddg=", "")
 # http://stackoverflow.com/a/32451970/5951529
 final_link = (urllib.parse.unquote(remove_duckduckgo_symbols))
 # Markdown link
-markdown_link = '[' + ('Поиск Кристиниты') + ']' + \
+markdown_link = '[' + 'Поиск Кристиниты' + ']' + \
     '(' + final_link + ')'
 
 print(markdown_link)
