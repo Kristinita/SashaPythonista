@@ -3,14 +3,18 @@ environment:
   matrix:
 
     - PYTHON: "C:\\Python36-x64"
+      PYTHON_VERSION: "3.6.0"
+      PYTHON_ARCH: "64"
+
+    PIP: C:\\Python36-x64\Scripts\pip
 
 install:
 
-  - "pip install --disable-pip-version-check --user --upgrade pip"
-  - "pip install lxml"
-  - "pip install beautifulsoup4"
-  - "pip install w3lib"
+  - cmd: "%PIP% install --disable-pip-version-check --user --upgrade pip"
+  - cmd: "%PIP% install lxml"
+  - cmd: "%PIP% install beautifulsoup4"
+  - cmd: "%PIP% install w3lib"
 
 build_script:
 
-  - "python KristinitaLuckyLinkTest.py"
+  - cmd: "%PYTHON3%\\python KristinitaLuckyLinkTest.py"
