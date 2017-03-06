@@ -1,0 +1,18 @@
+environment:
+
+  matrix:
+
+    - PYTHON: "C:\\Python36"
+      PYTHON_VERSION: "3.6.0"
+      PYTHON_ARCH: "64"
+
+  install:
+
+    - "pip install --disable-pip-version-check --user --upgrade pip"
+    - "pip install lxml"
+    - "pip install beautifulsoup4"
+    - "pip install w3lib"
+
+  build_script:
+
+    - "python KristinitaLuckyLinkTest.py"
