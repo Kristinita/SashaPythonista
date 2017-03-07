@@ -17,4 +17,4 @@ install:
 
 build_script:
 
-  - cmd: "%PYTHON%\\python -u SashaAppVeyorEncoding.py"
+  - cmd: "%PYTHON%\\python -mrun SashaAppVeyorEncoding.py"
