@@ -5,18 +5,13 @@ environment:
     - PYTHON: "C:\\Python36-x64"
       PYTHON_VERSION: "3.6.0"
       PYTHON_ARCH: "64"
-      PIP: "C:\\Python36-x64\\Scripts\\pip"
 
 platform: x64
 
 install:
 
-  - cmd: "%PIP% install --disable-pip-version-check --user --upgrade pip"
-  - cmd: "%PIP% install lxml"
-  - cmd: "%PIP% install beautifulsoup4"
-  - cmd: "%PIP% install w3lib"
   - cmd: "chcp 65001"
 
 build_script:
 
-  - cmd: "%PYTHON%\\python -u SashaTestEncoding.py"
+  - cmd: "%PYTHON%\\python -u SashaAppVeyorEncoding.py"
