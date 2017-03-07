@@ -19,4 +19,4 @@ install:
 
 build_script:
 
-  - cmd: "%PYTHON%\\python -u KristinitaLuckyLinkTest.py"
+  - cmd: "%PYTHON%\\python -u SashaTestEncoding.py"
