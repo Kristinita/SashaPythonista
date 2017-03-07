@@ -15,6 +15,6 @@ install:
   - cmd: "%PIP% install win-unicode-console"
   - cmd: "chcp 65001"
 
-build_script:
+test_script:
 
-  - cmd: "%PYTHON%\\python -mrun SashaAppVeyorEncoding.py"
+  - cmd: "%PYTHON%\\python -u SashaAppVeyorEncoding.py"
