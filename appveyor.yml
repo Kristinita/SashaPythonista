@@ -7,6 +7,8 @@ environment:
       PYTHON_ARCH: "64"
       PIP: "C:\\Python36-x64\\Scripts\\pip"
 
+platform: x64
+
 install:
 
   - cmd: "%PIP% install --disable-pip-version-check --user --upgrade pip"
