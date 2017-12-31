@@ -1,5 +1,5 @@
 <body>
-blabla Yes
+blabla*Yes
 <!-- Comment -->
 Пёс*Yes
 Кошка*No

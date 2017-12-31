@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: SashaChernykh
 # @Date: 2017-12-31 15:43:57
-# @Last Modified time: 2017-12-31 22:05:30
+# @Last Modified time: 2017-12-31 22:34:46
 # Check, if blabla in OS
 
 import glob
@@ -73,4 +73,8 @@ for filename in globus:
             stripped_list = list(
                 map(str.strip, not_asterisk_list_items))
             print(stripped_list)
+            # Lists to strings with qoutes
+            # https://stackoverflow.com/a/13207725/5951529
+            list_to_strings = str(stripped_list)[1:-1]
+            print("This lines not contains asterisks: " + list_to_strings)
             exit(1)
