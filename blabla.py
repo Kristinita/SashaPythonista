@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: SashaChernykh
 # @Date: 2017-12-31 15:43:57
-# @Last Modified time: 2017-12-31 19:04:11
+# @Last Modified time: 2017-12-31 19:10:28
 # Check, if blabla in OS
 
 import glob
@@ -34,7 +34,7 @@ for filename in globus:
     # https://stackoverflow.com/a/37531241/5951529
     rawdata = open(filename, "rb").read()
     chardet_data = chardet.detect(rawdata)
-    # Python словарь
+    # Python dictionary
     fileencoding = (chardet_data['encoding'])
 
     if fileencoding == 'windows-1251':
