@@ -16,5 +16,4 @@ install:
 
 build_script:
 
-  - cmd: "set PYTHONIOENCODING=utf-8"
   - cmd: "%PYTHON%\\python blabla.py"

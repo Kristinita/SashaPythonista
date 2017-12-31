@@ -1,5 +1,4 @@
-blabla
-
-РџС‘СЃ
-
-РљРѕС€РєР° Cat
+<body>
+blabla Yes
+Пёс*Yes
+Кошка No

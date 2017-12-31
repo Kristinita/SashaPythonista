@@ -1,6 +1,8 @@
-blabla
+File description
 
-
-Кошка кошка
-
-Собака
+<body>
+Question*Answer
+Sasha Goddess?*Yes
+Кошка
+<!-- This is comment, not check -->
+Is an error in this string? Yes
