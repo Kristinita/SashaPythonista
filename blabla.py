@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: SashaChernykh
 # @Date: 2017-12-31 15:43:57
-# @Last Modified time: 2017-12-31 22:34:46
+# @Last Modified time: 2017-12-31 22:37:02
 # Check, if blabla in OS
 
 import glob
@@ -19,14 +19,14 @@ for filename in globus:
 
     # Check if string in a file
     # https://stackoverflow.com/a/4944929/5951529
-    #
-    # exit code(1)
-    # https://stackoverflow.com/a/9426054/5951529
+
     if '<body>' in open(filename).read():
         print(filename + " true")
     else:
         print("Filename " + filename + " not contain \\<body\\> . Please, add \
            \\<body\\> in " + filename)
+        # exit code(1)
+        # https://stackoverflow.com/a/9426054/5951529
         exit(1)
 
     # Not 100%, see https://stackoverflow.com/a/436299/5951529

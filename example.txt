@@ -3,7 +3,7 @@ File description
 <body>
 Question*Answer
 Sasha Goddess?*Yes
-КошкаМур Мурлычет
-Кот Кошач
+КошкаМур*Мурлычет
+Кот*Кошач
 <!-- This is comment, not check -->
 Is an error in this string?*Yes
