@@ -3,6 +3,6 @@ File description
 <body>
 Question*Answer
 Sasha Goddess?*Yes
-Кошка
+Кошка*Мур
 <!-- This is comment, not check -->
-Is an error in this string? Yes
+Is an error in this string?*Yes
