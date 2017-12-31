@@ -3,7 +3,7 @@ environment:
   matrix:
 
     - PYTHON: "C:\\Python36-x64"
-      PYTHON_VERSION: "3.6.0"
+      PYTHON_VERSION: "3.6.3"
       PYTHON_ARCH: "64"
       PIP: "C:\\Python36-x64\\Scripts\\pip"
 
@@ -13,6 +13,7 @@ install:
 
   - cmd: "%PIP% install --disable-pip-version-check --user --upgrade pip"
   - cmd: "%PIP% install win-unicode-console"
+  - cmd: "%PIP% install chardet"
   - cmd: "chcp 65001"
 
 build_script:
