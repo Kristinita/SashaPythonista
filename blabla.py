@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: SashaChernykh
 # @Date: 2017-12-31 15:43:57
-# @Last Modified time: 2017-12-31 17:15:13
+# @Last Modified time: 2017-12-31 17:50:11
 # Check, if blabla in OS
 
 import glob
@@ -21,4 +21,4 @@ for filename in globus:
         print(filename + " true")
     else:
         print(filename + " false")
-        exit(0)
+        exit(1)
