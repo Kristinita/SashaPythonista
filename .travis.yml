@@ -1,0 +1,10 @@
+language: python
+python:
+  - "3.6.3"
+# command to install dependencies
+install:
+  - pip install --disable-pip-version-check --user --upgrade pip
+  - pip install chardet
+# command to run tests
+script:
+  - python blabla.py
