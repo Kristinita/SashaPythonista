@@ -4,6 +4,6 @@ File description
 Question*Answer
 Sasha Goddess?*Yes
 КошкаМур*Мурлычет
-Кот*Кошач
+Кот*Кошач Test
 <!-- This is comment, not check -->
 Is an error in this string?*Yes
