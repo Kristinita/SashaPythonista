@@ -3,8 +3,12 @@ python:
   - "3.6.3"
 # command to install dependencies
 install:
-  - pip install --disable-pip-version-check --user --upgrade pip
   - pip install chardet
+  - pip install flake8
+  - pip install pydocstyle
+  - pip install logbook
 # command to run tests
 script:
-  - python blabla.py
+  - python EricpackagesChecker.py
+  - flake8 . --max-line-length=120
+  - pydocstyle .

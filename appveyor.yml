@@ -11,9 +11,9 @@ platform: x64
 
 install:
 
-  - cmd: "%PIP% install --disable-pip-version-check --user --upgrade pip"
   - cmd: "%PIP% install chardet"
+  - cmd: "%PIP% install logbook"
 
 build_script:
 
-  - cmd: "%PYTHON%\\python blabla.py"
+  - cmd: "%PYTHON%\\python EricPackagesChecker.py"
