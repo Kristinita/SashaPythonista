@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: SashaChernykh
 # @Date: 2017-12-31 15:43:57
-# @Last Modified time: 2018-01-01 16:06:14
+# @Last Modified time: 2018-01-01 16:18:43
 """Test module for Eric's rooms packages.
 
 Tests for continuous integration EricsRooms packages. EricPackageChecker.py
@@ -38,7 +38,7 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
 
     # Check if string in a file
     # https://stackoverflow.com/a/4944929/5951529
-    if '<body>' in open(filename).read():
+    if "<body>" in open(filename).read():
         log.debug(filename + " contains <body>")
     else:
         log.error("File " + filename + " not contain <body> . \
