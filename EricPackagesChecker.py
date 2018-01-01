@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: SashaChernykh
 # @Date: 2017-12-31 15:43:57
-# @Last Modified time: 2018-01-01 16:18:43
+# @Last Modified time: 2018-01-01 16:31:39
 """Test module for Eric's rooms packages.
 
 Tests for continuous integration EricsRooms packages. EricPackageChecker.py
@@ -66,8 +66,11 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
             " save in MacCyrillic encoding with confidence " +
             str(chardet_confidence))
     else:
-        log.critical(filename + " save in " + fileencoding + ", not in \
-           windows 1251 encoding. Please, save a file in windows - 1251.")
+        log.critical(
+            filename +
+            " save in " +
+            fileencoding +
+            ", not in windows-1251 encoding. Please, save a file in windows-1251.")
 
     # Lines to list
     # https://stackoverflow.com/a/3277515/5951529
