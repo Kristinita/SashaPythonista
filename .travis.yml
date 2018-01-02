@@ -9,6 +9,5 @@ install:
   - pip install logbook
 # command to run tests
 script:
-  - python EricPackagesChecker.py
-  - flake8 . --max-line-length=120
-  - pydocstyle .
+  # - python EricPackagesChecker.py
+  - flake8 .

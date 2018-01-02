@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: SashaChernykh
 # @Date: 2017-12-31 15:43:57
-# @Last Modified time: 2018-01-01 16:31:39
+# @Last Modified time: 2018-01-02 09:36:05
 """Test module for Eric's rooms packages.
 
 Tests for continuous integration EricsRooms packages. EricPackageChecker.py
@@ -17,6 +17,7 @@ that:
 import chardet
 import glob
 
+import os
 # logbook — custom logging:
 # http://logbook.readthedocs.io/en/stable/quickstart.html
 # Set INFO level:
@@ -25,24 +26,31 @@ import logbook
 
 import sys
 logbook.StreamHandler(sys.stdout,
-                      level=logbook.NOTICE).push_application()
+                      level=logbook.DEBUG).push_application()
 log = logbook.Logger("Sasha Logbook")
 
 # Get all .txt file in a directory
 # https://stackoverflow.com/a/3964689/5951529
 all_txt_in_eric_room_wihtout_subfolders = glob.glob('*.txt')
 
+# Flags, see https://www.computerhope.com/jargon/f/flag.htm
+# https://stackoverflow.com/a/48052480/5951529
+failure_tests = False
+
 # Get list all filenames in a directory
 # https://stackoverflow.com/a/1120736/5951529
 for filename in all_txt_in_eric_room_wihtout_subfolders:
 
+    filename_without_path = os.path.basename(filename)
+
     # Check if string in a file
     # https://stackoverflow.com/a/4944929/5951529
     if "<body>" in open(filename).read():
-        log.debug(filename + " contains <body>")
+        log.debug(filename_without_path + " contains <body>")
     else:
-        log.error("File " + filename + " not contain <body> . \
-            Please, add <body> in " + filename + ".")
+        log.error("File " + filename_without_path + " not contain <body> . \
+            Please, add <body> in " + filename_without_path + ".")
+        failure_tests = True
 
     # Not 100%, see https://stackoverflow.com/a/436299/5951529
     # Can doesn't work for Latin packages
@@ -71,6 +79,7 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
             " save in " +
             fileencoding +
             ", not in windows-1251 encoding. Please, save a file in windows-1251.")
+        failure_tests = True
 
     # Lines to list
     # https://stackoverflow.com/a/3277515/5951529
@@ -104,4 +113,15 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
             lines_without_asterisks_and_n_as_strings = str(
                 lines_without_asterisks_and_n)[1:-1]
             log.error("This line(s) not contains asterisks: " +
-                      lines_without_asterisks_and_n_as_strings + " in " + filename)
+                      lines_without_asterisks_and_n_as_strings +
+                      " in " +
+                      filename)
+            failure_tests = True
+
+if failure_tests:
+    exit(1)
+
+if not failure_tests:
+    log.notice("All files contains <body>")
+    log.notice("All files in Windows-1251 encoding")
+    log.notice("All needest strings contains asterisks")

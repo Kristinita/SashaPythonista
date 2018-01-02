@@ -1,0 +1,3 @@
+[flake8]
+# Be a little more relaxed than the PEP8 79 character limit
+max-line-length = 120
