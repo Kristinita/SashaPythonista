@@ -10,4 +10,5 @@ install:
 # command to run tests
 script:
   # - python EricPackagesChecker.py
+  - python "tests/eric_languagetool.py"
   - flake8 .

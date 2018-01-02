@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 09:40:46
-# @Last Modified time: 2018-01-02 09:51:33
+# @Last Modified time: 2018-01-02 18:39:06
 """Encoding checker.
 
 Check, that files in Windows-1251 encoding.
@@ -11,11 +11,11 @@ Bugs:
     2. chardet can detect Windows-1251 as MacCyrillic.
 """
 import chardet
+import os
 
 # Do not use «from <module> import *»
 # http://bit.ly/2CuW5GS
 from eric_config import all_txt_in_eric_room_wihtout_subfolders
-from eric_config import filename_without_path
 from eric_config import log
 
 # Flags, see https://www.computerhope.com/jargon/f/flag.htm
@@ -25,6 +25,8 @@ failure_tests = False
 # Get list all filenames in a directory
 # https://stackoverflow.com/a/1120736/5951529
 for filename in all_txt_in_eric_room_wihtout_subfolders:
+
+    filename_without_path = os.path.basename(filename)
 
     # Not 100%, see https://stackoverflow.com/a/436299/5951529
     # Can doesn't work for Latin packages

@@ -1,8 +1,4 @@
-File description
+Sasha Belissimo!
 
-<body>
-Question*Answer
-Sasha Goddess?*Yes
-<!-- This is comment, not check -->
-Is an error in this string?*Yes
-Саша святая?*Да
+Саша Совершенна!
+

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 09:40:46
-# @Last Modified time: 2018-01-02 09:54:10
+# @Last Modified time: 2018-01-02 18:39:29
 """Asterisks Checker.
 
 Check, if astresks contains in each line of package for Eric room.
@@ -10,10 +10,10 @@ Do not check:
     1. lines before <body> and line with <body>,
     2. <!-- comments -->.
 """
+import os
 # Do not use «from <module> import *»
 # http://bit.ly/2CuW5GS
 from eric_config import all_txt_in_eric_room_wihtout_subfolders
-from eric_config import filename_without_path
 from eric_config import log
 
 # Flags, see https://www.computerhope.com/jargon/f/flag.htm
@@ -23,6 +23,8 @@ failure_tests = False
 # Get list all filenames in a directory
 # https://stackoverflow.com/a/1120736/5951529
 for filename in all_txt_in_eric_room_wihtout_subfolders:
+
+    filename_without_path = os.path.basename(filename)
 
     # Lines to list
     # https://stackoverflow.com/a/3277515/5951529
