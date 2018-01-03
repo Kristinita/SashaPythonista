@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 09:40:46
-# @Last Modified time: 2018-01-02 18:39:06
+# @Last Modified time: 2018-01-03 18:38:07
 """Encoding checker.
 
 Check, that files in Windows-1251 encoding.
@@ -20,7 +20,7 @@ from eric_config import log
 
 # Flags, see https://www.computerhope.com/jargon/f/flag.htm
 # https://stackoverflow.com/a/48052480/5951529
-failure_tests = False
+encoding_failure_tests = False
 
 # Get list all filenames in a directory
 # https://stackoverflow.com/a/1120736/5951529
@@ -52,13 +52,14 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
     else:
         log.critical(
             filename_without_path +
-            " save in " +
+            " saved in " +
             fileencoding +
             ", not in windows-1251 encoding. Please, save a file in windows-1251.")
-        failure_tests = True
+        encoding_failure_tests = True
 
-if failure_tests:
-    exit(1)
+if encoding_failure_tests:
+    log.critical(
+        "One or more your files not in Windows-1251 encoding. Please, save file in Windows-1251 encoding.")
 
-if not failure_tests:
+if not encoding_failure_tests:
     log.notice("All files in Windows-1251 encoding")

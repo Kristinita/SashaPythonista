@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 08:22:06
-# @Last Modified time: 2018-01-02 18:39:44
+# @Last Modified time: 2018-01-03 19:28:27
 """Body Checker.
 
 Check, if <body> contains in files.
@@ -14,7 +14,8 @@ from eric_config import log
 
 # Flags, see https://www.computerhope.com/jargon/f/flag.htm
 # https://stackoverflow.com/a/48052480/5951529
-failure_tests = False
+body_failure_tests = False
+
 
 # Get list all filenames in a directory
 # https://stackoverflow.com/a/1120736/5951529
@@ -33,10 +34,10 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
             " not contain <body>. Please, add <body> in " +
             filename_without_path +
             ".")
-        failure_tests = True
+        body_failure_tests = True
 
-if failure_tests:
-    exit(1)
+if body_failure_tests:
+    log.error("Not all files contains body. Please, correct it.")
 
-if not failure_tests:
+if not body_failure_tests:
     log.notice("All files contains <body>")

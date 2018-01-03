@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 09:40:46
-# @Last Modified time: 2018-01-02 18:39:29
+# @Last Modified time: 2018-01-03 19:39:17
 """Asterisks Checker.
 
 Check, if astresks contains in each line of package for Eric room.
@@ -18,7 +18,7 @@ from eric_config import log
 
 # Flags, see https://www.computerhope.com/jargon/f/flag.htm
 # https://stackoverflow.com/a/48052480/5951529
-failure_tests = False
+asterisks_failure_tests = False
 
 # Get list all filenames in a directory
 # https://stackoverflow.com/a/1120736/5951529
@@ -64,10 +64,11 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
                       lines_without_asterisks_and_n_as_strings +
                       " in " +
                       filename_without_path)
-            failure_tests = True
+            asterisks_failure_tests = True
 
-if failure_tests:
-    exit(1)
+if asterisks_failure_tests:
+    log.error(
+        "One or more your files not contained asterisks. Please, correct your package.")
 
-if not failure_tests:
-    log.notice("All needest strings contains asterisks")
+if not asterisks_failure_tests:
+    log.notice("All needest lines contains asterisks")

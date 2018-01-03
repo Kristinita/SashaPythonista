@@ -5,10 +5,12 @@ python:
 install:
   - pip install chardet
   - pip install flake8
-  - pip install pydocstyle
   - pip install logbook
+  - pip install pydocstyle
 # command to run tests
 script:
-  # - python EricPackagesChecker.py
-  - python "tests/eric_languagetool.py"
-  - flake8 .
+  - python "tests/eric_run_tests.py"
+  # - python "tests/eric_body.py"
+  # - python "tests/eric_head.py"
+  # - python "tests/eric_asterisks.py"
+  # - flake8 .

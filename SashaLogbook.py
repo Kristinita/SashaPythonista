@@ -13,4 +13,4 @@ log.debug("Debug message")
 log.warning("Warning message")
 log.error("Error message")
 
-run(test)
+run(test, exit=False)

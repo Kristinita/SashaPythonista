@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 15:30:08
-# @Last Modified time: 2018-01-02 22:17:37
+# @Last Modified time: 2018-01-03 22:13:16
 """LanguageTool Python.
 
 LanguageTool wrapper for Python.
@@ -18,7 +18,7 @@ tool_language = language_check.LanguageTool('ru-RU')
 
 # Flags, see https://www.computerhope.com/jargon/f/flag.htm
 # https://stackoverflow.com/a/48052480/5951529
-failure_tests = False
+languagetool_failure_tests = False
 
 # Get list all filenames in a directory
 # https://stackoverflow.com/a/1120736/5951529
@@ -45,11 +45,11 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
     else:
         log.warning(
             "Detect error(s) or/and typo(s) in " + filename_without_path + "\n\n")
-        failure_tests = True
+        languagetool_failure_tests = True
 
-if not failure_tests:
+if not languagetool_failure_tests:
     log.notice("LanguageTool no detect errors and typos for all files.")
 
-if failure_tests:
+if languagetool_failure_tests:
     log.warning(
         "LanguageTool detect error(s) or/and typo(s). Please, review it.")

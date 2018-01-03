@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 08:35:59
-# @Last Modified time: 2018-01-02 18:38:44
+# @Last Modified time: 2018-01-03 19:34:48
 """Configuration file.
 
 Imports and variables.
 """
 import glob
+
 
 # logbook — custom logging:
 # http://logbook.readthedocs.io/en/stable/quickstart.html
@@ -15,6 +16,8 @@ import glob
 import logbook
 
 import sys
+
+
 logbook.StreamHandler(sys.stdout,
                       level=logbook.NOTICE).push_application()
 log = logbook.Logger("Sasha Logbook")
