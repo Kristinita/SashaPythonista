@@ -9,6 +9,12 @@ environment:
 
 platform: x64
 
+install:
+
+  - cmd: "%PIP% install win-unicode-console"
+  - cmd: chcp 65001
+
 build_script:
 
+  - cmd: set PYTHONIOENCODING=utf-8
   - cmd: "%PYTHON%\\python SashaAppVeyorEncoding.py"
