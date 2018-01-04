@@ -24,7 +24,7 @@
 
 Постоянный адрес пакета: https://github.com/Kristinita/Eric-s-Green-Room/blob/master/Термины_генетики.txt
 
-<body>
+<bod>
 <!-- Строение клетки -->
 <!-- Источник(и): https://www.rlsnet.ru/books_book_id_2_page_14.htm -->
 Ядро и цитоплазма клетки составляют ЭТО*Протоплазма
