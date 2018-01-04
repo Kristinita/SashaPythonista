@@ -11,9 +11,9 @@ platform: x64
 
 install:
 
-  - cmd: "%PIP% install win-unicode-console"
-  - cmd: chcp 65001
+  - cmd: "%PIP% install chardet"
+  - cmd: "%PIP% install logbook"
 
 build_script:
 
-  - cmd: "%PYTHON%\\python SashaAppVeyorEncoding.py"
+  - cmd: "%PYTHON%\\python tests\\eric_run_tests.py"

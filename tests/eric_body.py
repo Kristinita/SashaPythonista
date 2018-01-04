@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 08:22:06
-# @Last Modified time: 2018-01-04 09:19:39
+# @Last Modified time: 2018-01-04 11:34:13
 """Body Checker.
 
 Check, if <body> contains in files.
@@ -25,7 +25,10 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
 
     # Check if string in a file
     # https://stackoverflow.com/a/4944929/5951529
-    # Encoding for Travis CI, see https://stackoverflow.com/a/31492722/5951529
+    # Encoding for Travis CI, see
+    # https://stackoverflow.com/a/31492722/5951529
+    # https://github.com/travis-ci/travis-ci/issues/8993#issuecomment-354674238
+    # https://github.com/travis-ci/travis-ci/issues/8993#issuecomment-354681085
     if "<body>" in open(filename, encoding='windows-1251').read():
         log.debug(filename_without_path + " contains <body>")
     else:
