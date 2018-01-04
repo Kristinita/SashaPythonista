@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 08:22:06
-# @Last Modified time: 2018-01-04 09:20:17
+# @Last Modified time: 2018-01-04 09:29:22
 """Head checker.
 
 Check, that all data in a head contains in packages for Eric's room.
@@ -110,7 +110,7 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
         proofs_failure_tests = True
 
     if 'Автор(ы), редакторы и рецензенты (если есть) материалов источника(ов):' in open(
-            filename).read():
+            filename, encoding='windows-1251').read():
         log.debug(
             '«Автор(ы), редакторы и рецензенты (если есть) материалов источника(ов):» contains in ' +
             filename_without_path)
