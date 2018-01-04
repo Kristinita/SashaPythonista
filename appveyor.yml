@@ -11,4 +11,4 @@ platform: x64
 
 build_script:
 
-  - cmd: "%PYTHON%\\python SashaAppveyorEncoding.py"
+  - cmd: "%PYTHON%\\python SashaAppVeyorEncoding.py"
