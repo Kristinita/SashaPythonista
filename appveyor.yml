@@ -16,4 +16,5 @@ install:
 
 build_script:
 
+  - cmd: set PYTHONIOENCODING=utf-8
   - cmd: "%PYTHON%\\python tests\\eric_run_tests.py"
