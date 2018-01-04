@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 09:40:46
-# @Last Modified time: 2018-01-04 09:23:30
+# @Last Modified time: 2018-01-04 16:20:04
 """Encoding checker.
 
 Check, that files in Windows-1251 encoding.
@@ -11,6 +11,7 @@ Bugs:
     2. chardet can detect Windows-1251 as MacCyrillic.
 """
 import chardet
+import codecs
 import os
 
 # Do not use «from <module> import *»
@@ -18,9 +19,6 @@ import os
 from eric_config import all_txt_in_eric_room_wihtout_subfolders
 from eric_config import log
 
-# Flags, see https://www.computerhope.com/jargon/f/flag.htm
-# https://stackoverflow.com/a/48052480/5951529
-encoding_failure_tests = False
 
 # Get list all filenames in a directory
 # https://stackoverflow.com/a/1120736/5951529
@@ -50,16 +48,16 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
             " save in MacCyrillic encoding with confidence " +
             str(chardet_confidence))
     else:
-        log.critical(
+        # Convert file from UTF-8 to Cyrillic 1251
+        # https://stackoverflow.com/q/19932116/5951529
+        with codecs.open(filename, "r", "utf-8") as file_for_conversion:
+            read_file_for_conversion = file_for_conversion.read()
+        with codecs.open(filename, "w", "windows-1251") as file_for_conversion:
+            if read_file_for_conversion:
+                file_for_conversion.write(read_file_for_conversion)
+        log.notice(
             filename_without_path +
-            " saved in " +
-            fileencoding +
-            ", not in windows-1251 encoding. Please, save a file in windows-1251.")
-        encoding_failure_tests = True
+            " converted from UTF-8 to Windows-1251.")
 
-if encoding_failure_tests:
-    log.critical(
-        "One or more your files not in Windows-1251 encoding. Please, save file in Windows-1251 encoding.")
 
-if not encoding_failure_tests:
-    log.notice("All files in Windows-1251 encoding")
+log.notice("All files in Windows-1251 encoding")

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 09:40:46
-# @Last Modified time: 2018-01-04 12:43:02
+# @Last Modified time: 2018-01-04 16:04:23
 """Asterisks Checker.
 
 Check, if astresks contains in each line of package for Eric room.
@@ -41,7 +41,7 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
         except ValueError:
             log.error("If you see this message and, possibly, long output after them, "
                       "your file " + filename_without_path + " not contains <body>. "
-                      "Please, add <body> to " + filename_without_path)
+                      "Please, add <body> to " + filename_without_path + " .")
             list_without_lines_with_body = submit_file_as_list
 
         # Remove list item, contains «<!--»
