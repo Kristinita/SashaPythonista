@@ -1,1 +1,2 @@
-print('Sasha superior!')
+# -*- coding: utf-8 -*-
+print('Саша наилучшая!')
