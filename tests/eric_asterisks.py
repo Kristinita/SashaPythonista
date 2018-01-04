@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 09:40:46
-# @Last Modified time: 2018-01-04 16:45:46
+# @Last Modified time: 2018-01-04 16:54:50
 """Asterisks Checker.
 
 Check, if astresks contains in each line of package for Eric room.
@@ -43,6 +43,7 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
                       "your file " + filename_without_path + " not contains <body>. "
                       "Please, add <body> to " + filename_without_path + " to correct place "
                       "and rerun tests.")
+            # Full file check, that asterisks contains in file
             list_without_lines_with_body = submit_file_as_list
 
         # Remove list item, contains «<!--»
