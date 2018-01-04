@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 09:40:46
-# @Last Modified time: 2018-01-04 09:20:53
+# @Last Modified time: 2018-01-04 12:43:02
 """Asterisks Checker.
 
 Check, if astresks contains in each line of package for Eric room.
@@ -32,9 +32,18 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
         submit_file_as_list = filename_as_list.readlines()
         # New list after <body>
         # https://stackoverflow.com/a/35880897/5951529
-        get_lines_with_body = submit_file_as_list.index('<body>\n')
-        list_without_lines_with_body = submit_file_as_list[get_lines_with_body
-                                                           + 1:]
+        # Except: if <body> not contains, Erichek output ValueError.
+        # Propose to add <body>.
+        try:
+            get_lines_with_body = submit_file_as_list.index('<body>\n')
+            list_without_lines_with_body = submit_file_as_list[get_lines_with_body
+                                                               + 1:]
+        except ValueError:
+            log.error("If you see this message and, possibly, long output after them, "
+                      "your file " + filename_without_path + " not contains <body>. "
+                      "Please, add <body> to " + filename_without_path)
+            list_without_lines_with_body = submit_file_as_list
+
         # Remove list item, contains «<!--»
         # https://stackoverflow.com/a/3416473/5951529
         list_without_lines_with_body_and_comments = [x for x in

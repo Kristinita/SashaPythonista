@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 08:35:59
-# @Last Modified time: 2018-01-04 11:46:23
+# @Last Modified time: 2018-01-04 12:04:25
 """Configuration file.
 
 Imports and variables.
@@ -11,7 +11,7 @@ import glob
 
 # logbook — custom logging:
 # http://logbook.readthedocs.io/en/stable/quickstart.html
-# Set INFO level:
+# Set NOTICE level:
 # https://github.com/search?q=StreamHandler(sys.stdout).push_application()&type=Code
 import logbook
 
