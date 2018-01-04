@@ -1,0 +1,12 @@
+machine:
+  python:
+    version: 3.6.3
+
+dependencies:
+  post:
+    - pip install chardet
+    - pip install logbook
+
+test:
+  override:
+    - python "tests/eric_run_tests.py"

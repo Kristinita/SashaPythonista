@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 08:22:06
-# @Last Modified time: 2018-01-04 09:29:22
+# @Last Modified time: 2018-01-04 09:30:07
 """Head checker.
 
 Check, that all data in a head contains in packages for Eric's room.
