@@ -1,5 +1,4 @@
 import logbook
-import sys
 
 from clize import run
 
