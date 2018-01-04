@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 08:22:06
-# @Last Modified time: 2018-01-04 09:30:07
+# @Last Modified time: 2018-01-04 17:00:32
 """Head checker.
 
 Check, that all data in a head contains in packages for Eric's room.
@@ -156,7 +156,7 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
         head_failure_tests = True
 
 if not head_failure_tests:
-    log.notice('All files contains correct head data.')
+    log.notice('All files contains correct head data')
 
 if head_failure_tests:
     log.error('One or more packages not contains one or more head data. '

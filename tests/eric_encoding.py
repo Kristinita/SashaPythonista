@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 09:40:46
-# @Last Modified time: 2018-01-04 16:20:04
+# @Last Modified time: 2018-01-04 17:05:40
 """Encoding checker.
 
 Check, that files in Windows-1251 encoding.
@@ -43,9 +43,9 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
     # Integer to string:
     # https://stackoverflow.com/a/961638/5951529
     elif fileencoding == 'MacCyrillic':
-        log.debug(
-            filename_without_path +
-            " save in MacCyrillic encoding with confidence " +
+        log.notice(
+            "Encoding of file " + filename_without_path +
+            " chardet detect as MacCyrillic with confidence " +
             str(chardet_confidence))
     else:
         # Convert file from UTF-8 to Cyrillic 1251
@@ -57,7 +57,7 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
                 file_for_conversion.write(read_file_for_conversion)
         log.notice(
             filename_without_path +
-            " converted from UTF-8 to Windows-1251.")
+            " converted from UTF-8 to Windows-1251")
 
 
 log.notice("All files in Windows-1251 encoding")
