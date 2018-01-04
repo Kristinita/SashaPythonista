@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 09:40:46
-# @Last Modified time: 2018-01-03 19:39:17
+# @Last Modified time: 2018-01-04 09:20:53
 """Asterisks Checker.
 
 Check, if astresks contains in each line of package for Eric room.
@@ -28,7 +28,7 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
 
     # Lines to list
     # https://stackoverflow.com/a/3277515/5951529
-    with open(filename) as filename_as_list:
+    with open(filename, encoding='windows-1251') as filename_as_list:
         submit_file_as_list = filename_as_list.readlines()
         # New list after <body>
         # https://stackoverflow.com/a/35880897/5951529

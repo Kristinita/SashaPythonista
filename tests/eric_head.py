@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 08:22:06
-# @Last Modified time: 2018-01-03 20:01:40
+# @Last Modified time: 2018-01-04 09:20:17
 """Head checker.
 
 Check, that all data in a head contains in packages for Eric's room.
@@ -36,7 +36,7 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
     filename_without_path = os.path.basename(filename)
 
     # Find head data
-    if 'Описание пакета:' in open(filename).read():
+    if 'Описание пакета:' in open(filename, encoding='windows-1251').read():
         log.debug(
             '«Описание пакета:» contains in ' +
             filename_without_path)
@@ -46,7 +46,8 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
             ' not contains «Описание пакета:»')
         description_failure_tests = True
 
-    if 'Процесс тренировки:' in open(filename).read():
+    if 'Процесс тренировки:' in open(
+            filename, encoding='windows-1251').read():
         log.debug(
             '«Процесс тренировки:» contains in ' +
             filename_without_path)
@@ -56,7 +57,7 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
             ' not contains «Процесс тренировки:»')
         training_process_failure_tests = True
 
-    if 'Пример вопроса 1:' in open(filename).read():
+    if 'Пример вопроса 1:' in open(filename, encoding='windows-1251').read():
         log.debug(
             '«Пример вопроса 1:» contains in ' +
             filename_without_path)
@@ -66,7 +67,8 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
             ' not contains «Пример вопроса 1:»')
         first_example_failure_tests = True
 
-    if 'Ответ к примеру вопроса 1:' in open(filename).read():
+    if 'Ответ к примеру вопроса 1:' in open(
+            filename, encoding='windows-1251').read():
         log.debug(
             '«Ответ к примеру вопроса 1:» contains in ' +
             filename_without_path)
@@ -76,7 +78,7 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
             ' not contains «Ответ к примеру вопроса 1:»')
         first_answer_failure_tests = True
 
-    if 'Пример вопроса 2:' in open(filename).read():
+    if 'Пример вопроса 2:' in open(filename, encoding='windows-1251').read():
         log.debug(
             '«Пример вопроса 2:» contains in ' +
             filename_without_path)
@@ -86,7 +88,8 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
             ' not contains «Пример вопроса 2:»')
         second_example_failure_tests = True
 
-    if 'Ответ к примеру вопроса 2:' in open(filename).read():
+    if 'Ответ к примеру вопроса 2:' in open(
+            filename, encoding='windows-1251').read():
         log.debug(
             '«Ответ к примеру вопроса 2:» contains in ' +
             filename_without_path)
@@ -96,7 +99,7 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
             ' not contains «Ответ к примеру вопроса 2:»')
         second_answer_failure_tests = True
 
-    if 'Источник(и):' in open(filename).read():
+    if 'Источник(и):' in open(filename, encoding='windows-1251').read():
         log.debug(
             '«Источник(и):» contains in ' +
             filename_without_path)
@@ -117,7 +120,8 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
             ' not contains «Автор(ы), редакторы и рецензенты (если есть) материалов источника(ов):»')
         authors_failure_tests = True
 
-    if 'Ссылка(и) на источник(и):' in open(filename).read():
+    if 'Ссылка(и) на источник(и):' in open(
+            filename, encoding='windows-1251').read():
         log.debug(
             '«Ссылка(и) на источник(и):» contains in ' +
             filename_without_path)
@@ -127,7 +131,8 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
             ' not contains «Ссылка(и) на источник(и):»')
         link_failure_tests = True
 
-    if 'Постоянный адрес пакета:' in open(filename).read():
+    if 'Постоянный адрес пакета:' in open(
+            filename, encoding='windows-1251').read():
         log.debug(
             '«Постоянный адрес пакета:» contains in ' +
             filename_without_path)

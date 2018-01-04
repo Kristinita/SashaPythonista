@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 09:40:46
-# @Last Modified time: 2018-01-03 18:38:07
+# @Last Modified time: 2018-01-04 09:23:30
 """Encoding checker.
 
 Check, that files in Windows-1251 encoding.

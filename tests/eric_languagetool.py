@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 15:30:08
-# @Last Modified time: 2018-01-03 22:13:16
+# @Last Modified time: 2018-01-04 09:21:38
 """LanguageTool Python.
 
 LanguageTool wrapper for Python.
@@ -31,7 +31,7 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
     log.debug(filename_without_path + "\n")
     # Read file content
     # https://stackoverflow.com/a/3758177/5951529
-    file_text = open(filename_without_path).read()
+    file_text = open(filename, encoding='windows-1251').read()
 
     error_list = tool_language.check(file_text)
     # Print all tuples in list values
