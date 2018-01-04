@@ -1,1 +1,1 @@
-print('Саша наилучшая!')
+print('Sasha superior!')
