@@ -9,11 +9,6 @@ environment:
 
 platform: x64
 
-install:
-
-  - cmd: "%PIP% install chardet"
-  - cmd: "%PIP% install logbook"
-
 build_script:
 
-  - cmd: "%PYTHON%\\python EricPackagesChecker.py"
+  - cmd: "%PYTHON%\\python SashaAppveyorEncoding.py"
