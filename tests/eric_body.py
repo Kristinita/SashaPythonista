@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 08:22:06
-# @Last Modified time: 2018-01-03 19:28:27
+# @Last Modified time: 2018-01-04 09:15:17
 """Body Checker.
 
 Check, if <body> contains in files.
@@ -25,7 +25,7 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
 
     # Check if string in a file
     # https://stackoverflow.com/a/4944929/5951529
-    if "<body>" in open(filename).read():
+    if "<body>" in open(filename, encoding='windows-1251').read():
         log.debug(filename_without_path + " contains <body>")
     else:
         log.error(
