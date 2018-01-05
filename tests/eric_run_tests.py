@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-03 18:23:31
-# @Last Modified time: 2018-01-05 18:53:28
+# @Last Modified time: 2018-01-05 19:02:42
 """Run tests.
 
 File for running all tests.
@@ -47,6 +47,6 @@ else:
     log.notice(pyfancy().green().bold(
         "Congratulations! You haven't errors in your packages!"))
     cprint(figlet_format('Success', font='starwars'),
-           'green', 'on_white', attrs=['bold'])
+           'yellow', 'on_green', attrs=['bold'])
 
 run(clize_log_level, exit=False)
