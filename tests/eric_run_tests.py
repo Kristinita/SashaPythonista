@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-03 18:23:31
-# @Last Modified time: 2018-01-05 19:02:42
+# @Last Modified time: 2018-01-05 19:12:28
 """Run tests.
 
 File for running all tests.
@@ -40,13 +40,13 @@ clize_log_level()
 
 if encoding_failure_tests or body_failure_tests \
         or head_failure_tests or asterisks_failure_tests is True:
-    cprint(figlet_format('Failure', font='starwars'),
+    cprint(figlet_format('\nFailure', font='starwars'),
            'yellow', 'on_red', attrs=['bold'])
     exit(1)
 else:
     log.notice(pyfancy().green().bold(
         "Congratulations! You haven't errors in your packages!"))
-    cprint(figlet_format('Success', font='starwars'),
-           'yellow', 'on_green', attrs=['bold'])
+    cprint(figlet_format('\nSuccess', font='starwars'),
+           'white', 'on_green', attrs=['bold'])
 
 run(clize_log_level, exit=False)
