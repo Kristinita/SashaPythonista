@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-03 18:23:31
-# @Last Modified time: 2018-01-05 12:12:35
+# @Last Modified time: 2018-01-05 12:27:21
 """Run tests.
 
 File for running all tests.
@@ -25,5 +25,5 @@ if encoding_failure_tests or body_failure_tests \
         or head_failure_tests or asterisks_failure_tests is True:
     exit(1)
 else:
-    log.notice(pyfancy().green_bg(
+    log.notice(pyfancy().yellow_bg(
         "Congratulations! You haven't errors in your packages!"))

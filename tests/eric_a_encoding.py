@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 09:40:46
-# @Last Modified time: 2018-01-05 11:51:15
+# @Last Modified time: 2018-01-05 12:22:25
 """Encoding checker.
 
 Check, that files in Windows-1251 encoding.
@@ -76,4 +76,4 @@ if encoding_failure_tests:
         "One or more your files not in Windows-1251 encoding. Please, convert it (them) to Windows-1251."))
 
 if not encoding_failure_tests:
-    log.notice(pyfancy().green_bg("All files in Windows-1251 encoding"))
+    log.notice(pyfancy().yellow_bg("All files in Windows-1251 encoding"))
