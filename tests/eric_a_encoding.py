@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 09:40:46
-# @Last Modified time: 2018-01-05 13:30:37
+# @Last Modified time: 2018-01-05 13:48:20
 """Encoding checker.
 
 Check, that files in Windows-1251 encoding.
@@ -47,15 +47,15 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
     # Integer to string:
     # https://stackoverflow.com/a/961638/5951529
     elif fileencoding == 'MacCyrillic':
-        log.info(
+        log.notice(pyfancy().yellow
             "Encoding of file " + filename_without_path +
             " chardet detect as MacCyrillic with confidence " +
-            str(chardet_confidence))
+            str(chardet_confidence)))
     else:
         # Convert file from UTF-8 to Cyrillic 1251
         # https://stackoverflow.com/q/19932116/5951529
         with codecs.open(filename, "r", "utf-8") as file_for_conversion:
-            read_file_for_conversion = file_for_conversion.read()
+            read_file_for_conversion=file_for_conversion.read()
         with codecs.open(filename, "w", "windows-1251") as file_for_conversion:
             if read_file_for_conversion:
                 file_for_conversion.write(read_file_for_conversion)
@@ -64,11 +64,11 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
                                       fileencoding +
                                       ", not in Windows-1251 encoding! Please, save " +
                                       filename_without_path + " in Windows-1251 encoding."))
-        log.notice(pyfancy().light_yellow_bg("If encoding of file " + filename_without_path +
+        log.notice(pyfancy().green("If encoding of file " + filename_without_path +
                                              " is UTF-8 and you see message above for local wwtd testing, " +
                                              filename_without_path +
                                              " automatically will converted from UTF-8 to Windows-1251."))
-        encoding_failure_tests = True
+        encoding_failure_tests=True
 
 
 if encoding_failure_tests:
