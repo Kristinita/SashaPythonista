@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-03 18:23:31
-# @Last Modified time: 2018-01-05 12:27:21
+# @Last Modified time: 2018-01-05 14:19:16
 """Run tests.
 
 File for running all tests.
 """
 from eric_config import log
+# Disabled green background, because bad color in AppVeyor
+# https://github.com/appveyor/ci/issues/1138#issuecomment-355525721
 from pyfancy import pyfancy
 # If I import variables, Python run all tests.
 # I one of tests is false, Python run all tests → exit with code 1. Not
@@ -25,5 +27,5 @@ if encoding_failure_tests or body_failure_tests \
         or head_failure_tests or asterisks_failure_tests is True:
     exit(1)
 else:
-    log.notice(pyfancy().yellow_bg(
+    log.notice(pyfancy().green(
         "Congratulations! You haven't errors in your packages!"))

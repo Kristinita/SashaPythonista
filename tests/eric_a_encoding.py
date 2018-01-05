@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 09:40:46
-# @Last Modified time: 2018-01-05 13:51:09
+# @Last Modified time: 2018-01-05 14:25:39
 """Encoding checker.
 
 Check, that files in Windows-1251 encoding.
@@ -47,9 +47,9 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
     # Integer to string:
     # https://stackoverflow.com/a/961638/5951529
     elif fileencoding == 'MacCyrillic':
-        log.notice(pyfancy().yellow("Encoding of file " + filename_without_path +
-                                    " chardet detect as MacCyrillic with confidence " +
-                                    str(chardet_confidence)))
+        log.info(pyfancy().yellow("Encoding of file " + filename_without_path +
+                                  " chardet detect as MacCyrillic with confidence " +
+                                  str(chardet_confidence)))
     else:
         # Convert file from UTF-8 to Cyrillic 1251
         # https://stackoverflow.com/q/19932116/5951529
@@ -71,8 +71,8 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
 
 
 if encoding_failure_tests:
-    log.critical(pyfancy().red(
+    log.critical(pyfancy().red().bold(
         "One or more your files not in Windows-1251 encoding. Please, convert it (them) to Windows-1251."))
 
 if not encoding_failure_tests:
-    log.notice(pyfancy().yellow_bg("All files in Windows-1251 encoding"))
+    log.notice(pyfancy().green("All files in Windows-1251 encoding"))

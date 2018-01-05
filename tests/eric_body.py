@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 08:22:06
-# @Last Modified time: 2018-01-04 20:10:54
+# @Last Modified time: 2018-01-05 14:23:31
 """Body Checker.
 
 Check, that <body> contains in files.
 """
 import os
+
+from pyfancy import pyfancy
 # Do not use «from <module> import *»
 # http://bit.ly/2CuW5GS
 from eric_config import all_txt_in_eric_room_wihtout_subfolders
@@ -32,16 +34,16 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
     if "<body>" in open(filename, encoding='windows-1251').read():
         log.debug(filename_without_path + " contains <body>")
     else:
-        log.error(
+        log.error(pyfancy().red(
             "File " +
             filename_without_path +
             " not contain <body>. Please, add <body> in " +
             filename_without_path +
-            ".")
+            "."))
         body_failure_tests = True
 
 if body_failure_tests:
-    log.error("Not all files contains body. Please, correct it.")
+    log.error(pyfancy().red("Not all files contains body. Please, correct it."))
 
 if not body_failure_tests:
-    log.notice("All files contains <body>")
+    log.notice(pyfancy().green("All files contains <body>"))
