@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 08:35:59
-# @Last Modified time: 2018-01-04 12:04:25
-"""Configuration file.
+# @Last Modified time: 2018-01-04 20:12:49
+"""Configuration Erichek file.
 
-Imports and variables.
+Imports and variables for tests.
 """
 import glob
 

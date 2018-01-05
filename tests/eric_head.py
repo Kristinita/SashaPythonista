@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 08:22:06
-# @Last Modified time: 2018-01-04 17:00:32
+# @Last Modified time: 2018-01-04 20:10:02
 """Head checker.
 
 Check, that all data in a head contains in packages for Eric's room.
-
 """
 import os
 # Do not use «from <module> import *»

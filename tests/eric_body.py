@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 08:22:06
-# @Last Modified time: 2018-01-04 11:34:13
+# @Last Modified time: 2018-01-04 20:10:54
 """Body Checker.
 
-Check, if <body> contains in files.
+Check, that <body> contains in files.
 """
 import os
 # Do not use «from <module> import *»

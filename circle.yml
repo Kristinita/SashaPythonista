@@ -9,5 +9,4 @@ dependencies:
 
 test:
   override:
-    - python "tests/eric_encoding.py"
     - python "tests/eric_run_tests.py"
