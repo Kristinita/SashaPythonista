@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 09:40:46
-# @Last Modified time: 2018-01-05 14:44:40
+# @Last Modified time: 2018-01-05 17:52:50
 """Encoding checker.
 
 Check, that files in Windows-1251 encoding.
@@ -14,6 +14,7 @@ import chardet
 import codecs
 import os
 
+from eric_config import clize_log_level
 from pyfancy import pyfancy
 # Do not use «from <module> import *»
 # http://bit.ly/2CuW5GS
@@ -23,6 +24,8 @@ from eric_config import log
 # Flags, see https://www.computerhope.com/jargon/f/flag.htm
 # https://stackoverflow.com/a/48052480/5951529
 encoding_failure_tests = False
+
+clize_log_level()
 
 # Get list all filenames in a directory
 # https://stackoverflow.com/a/1120736/5951529

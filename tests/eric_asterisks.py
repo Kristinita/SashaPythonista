@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 09:40:46
-# @Last Modified time: 2018-01-05 14:48:39
+# @Last Modified time: 2018-01-05 17:45:02
 """Asterisks Checker.
 
 Check, if astresks contains in each line of package for Eric room.
@@ -16,7 +16,10 @@ from pyfancy import pyfancy
 # Do not use «from <module> import *»
 # http://bit.ly/2CuW5GS
 from eric_config import all_txt_in_eric_room_wihtout_subfolders
+from eric_config import clize_log_level
 from eric_config import log
+
+clize_log_level()
 
 # Flags, see https://www.computerhope.com/jargon/f/flag.htm
 # https://stackoverflow.com/a/48052480/5951529

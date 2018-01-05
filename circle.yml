@@ -5,7 +5,11 @@ machine:
 dependencies:
   post:
     - pip install chardet
+    - pip install clize
+    - pip install colorama
     - pip install logbook
+    - pip install pyfiglet
+    - pip install termcolor
 
 test:
   override:

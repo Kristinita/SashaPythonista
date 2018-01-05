@@ -12,7 +12,11 @@ platform: x64
 install:
 
   - cmd: "%PIP% install chardet"
+  - cmd: "%PIP% install clize"
+  - cmd: "%PIP% install colorama"
   - cmd: "%PIP% install logbook"
+  - cmd: "%PIP% install pyfiglet"
+  - cmd: "%PIP% install termcolor"
 
 build_script:
 

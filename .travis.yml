@@ -4,7 +4,11 @@ python:
 # command to install dependencies
 install:
   - pip install chardet
+  - pip install clize
+  - pip install colorama
   - pip install logbook
+  - pip install pyfiglet
+  - pip install termcolor
 # command to run tests
 script:
   - python "tests/eric_run_tests.py"

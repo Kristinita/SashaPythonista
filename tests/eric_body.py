@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 08:22:06
-# @Last Modified time: 2018-01-05 14:45:58
+# @Last Modified time: 2018-01-05 17:42:45
 """Body Checker.
 
 Check, that <body> contains in files.
 """
 import os
 
+from eric_config import clize_log_level
 from pyfancy import pyfancy
 # Do not use «from <module> import *»
 # http://bit.ly/2CuW5GS
@@ -18,6 +19,7 @@ from eric_config import log
 # https://stackoverflow.com/a/48052480/5951529
 body_failure_tests = False
 
+clize_log_level()
 
 # Get list all filenames in a directory
 # https://stackoverflow.com/a/1120736/5951529

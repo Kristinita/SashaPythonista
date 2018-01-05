@@ -1,11 +1,27 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 08:35:59
-# @Last Modified time: 2018-01-04 20:12:49
-"""Configuration Erichek file.
+# @Last Modified time: 2018-01-05 18:43:32
+# For pydocstyle:
+# D301: Use r""" if any backslashes in a docstring
+r"""Patorjk-HeX ASCII-art font.
 
-Imports and variables for tests.
+        _____                                                                                _____
+   _____\    \ ___________        ____________         _____         __     __          _____\    \  ______   _______
+  /    / |    |\          \      /            \   _____\    \_      /  \   /  \        /    / |    ||\     \  \      \
+ /    /  /___/| \    /\    \    |\___/\  \\___/| /     /|     |    /   /| |\   \      /    /  /___/| \\     \  |     /|
+|    |__ |___|/  |   \_\    |    \|____\  \___|//     / /____/|   /   //   \\   \    |    |__ |___|/  \|     |/     //
+|       \        |      ___/           |  |    |     | |____|/   /    \_____/    \   |       \         |     |_____//
+|     __/ __     |      \  ____   __  /   / __ |     |  _____   /    /\_____/\    \  |     __/ __      |     |\     \
+|\    \  /  \   /     /\ \/    \ /  \/   /_/  ||\     \|\    \ /    //\_____/\\    \ |\    \  /  \    /     /|\|     |
+| \____\/    | /_____/ |\______||____________/|| \_____\|    |/____/ |       | \____\| \____\/    |  /_____/ |/_____/|
+| |    |____/| |     | | |     ||           | /| |     /____/||    | |       | |    || |    |____/| |     | / |    | |
+ \|____|   | | |_____|/ \|_____||___________|/  \|_____|    |||____|/         \|____| \|____|   | | |_____|/  |____|/
+       |___|/                                          |____|/                              |___|/
 """
+# Configuration Erichek file.
+# Imports and variables for tests.
+
 import glob
 
 
@@ -17,11 +33,41 @@ import logbook
 
 import sys
 
-
-logbook.StreamHandler(sys.stdout,
-                      level=logbook.NOTICE).push_application()
-log = logbook.Logger("Sasha Logbook")
-
 # Get all .txt file in a directory
 # https://stackoverflow.com/a/3964689/5951529
 all_txt_in_eric_room_wihtout_subfolders = glob.glob('./*.txt')
+
+log = logbook.Logger("Sasha Logbook")
+
+
+def clize_log_level(*, logbook_level: 'll'="NOTICE"):
+    """Change log levels via command line.
+
+    User select, which logging messages to see. See about 6 log levels here:
+    https://logbook.readthedocs.io/en/stable/quickstart.html
+
+    :param logbook_level: user select logging level
+    """
+    print(logbook_level)
+
+    if logbook_level == "DEBUG":
+        logbook.StreamHandler(sys.stdout,
+                              level=logbook.DEBUG).push_application()
+    elif logbook_level == "INFO":
+        logbook.StreamHandler(sys.stdout,
+                              level=logbook.INFO).push_application()
+    elif logbook_level == "NOTICE":
+        logbook.StreamHandler(sys.stdout,
+                              level=logbook.NOTICE).push_application()
+    elif logbook_level == "WARNING":
+        logbook.StreamHandler(sys.stdout,
+                              level=logbook.WARNING).push_application()
+    elif logbook_level == "ERROR":
+        logbook.StreamHandler(sys.stdout,
+                              level=logbook.ERROR).push_application()
+    elif logbook_level == "CRITICAL":
+        logbook.StreamHandler(sys.stdout,
+                              level=logbook.CRITICAL).push_application()
+    else:
+        logbook.StreamHandler(sys.stdout,
+                              level=logbook.NOTICE).push_application()
