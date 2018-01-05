@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 08:22:06
-# @Last Modified time: 2018-01-04 20:10:02
+# @Last Modified time: 2018-01-05 14:42:59
 """Head checker.
 
 Check, that all data in a head contains in packages for Eric's room.
 """
 import os
+
+from pyfancy import pyfancy
 # Do not use «from <module> import *»
 # http://bit.ly/2CuW5GS
 from eric_config import all_txt_in_eric_room_wihtout_subfolders
@@ -40,9 +42,9 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
             '«Описание пакета:» contains in ' +
             filename_without_path)
     else:
-        log.error(
+        log.error(pyfancy().red().bold(
             filename_without_path +
-            ' not contains «Описание пакета:»')
+            ' not contains «Описание пакета:»'))
         description_failure_tests = True
 
     if 'Процесс тренировки:' in open(
@@ -51,9 +53,9 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
             '«Процесс тренировки:» contains in ' +
             filename_without_path)
     else:
-        log.error(
+        log.error(pyfancy().red().bold(
             filename_without_path +
-            ' not contains «Процесс тренировки:»')
+            ' not contains «Процесс тренировки:»'))
         training_process_failure_tests = True
 
     if 'Пример вопроса 1:' in open(filename, encoding='windows-1251').read():
@@ -61,9 +63,9 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
             '«Пример вопроса 1:» contains in ' +
             filename_without_path)
     else:
-        log.error(
+        log.error(pyfancy().red().bold(
             filename_without_path +
-            ' not contains «Пример вопроса 1:»')
+            ' not contains «Пример вопроса 1:»'))
         first_example_failure_tests = True
 
     if 'Ответ к примеру вопроса 1:' in open(
@@ -72,9 +74,9 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
             '«Ответ к примеру вопроса 1:» contains in ' +
             filename_without_path)
     else:
-        log.error(
+        log.error(pyfancy().red().bold(
             filename_without_path +
-            ' not contains «Ответ к примеру вопроса 1:»')
+            ' not contains «Ответ к примеру вопроса 1:»'))
         first_answer_failure_tests = True
 
     if 'Пример вопроса 2:' in open(filename, encoding='windows-1251').read():
@@ -82,9 +84,9 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
             '«Пример вопроса 2:» contains in ' +
             filename_without_path)
     else:
-        log.error(
+        log.error(pyfancy().red().bold(
             filename_without_path +
-            ' not contains «Пример вопроса 2:»')
+            ' not contains «Пример вопроса 2:»'))
         second_example_failure_tests = True
 
     if 'Ответ к примеру вопроса 2:' in open(
@@ -93,9 +95,9 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
             '«Ответ к примеру вопроса 2:» contains in ' +
             filename_without_path)
     else:
-        log.error(
+        log.error(pyfancy().red().bold(
             filename_without_path +
-            ' not contains «Ответ к примеру вопроса 2:»')
+            ' not contains «Ответ к примеру вопроса 2:»'))
         second_answer_failure_tests = True
 
     if 'Источник(и):' in open(filename, encoding='windows-1251').read():
@@ -103,9 +105,9 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
             '«Источник(и):» contains in ' +
             filename_without_path)
     else:
-        log.error(
+        log.error(pyfancy().red().bold(
             filename_without_path +
-            ' not contains «Источник(и):»')
+            ' not contains «Источник(и):»'))
         proofs_failure_tests = True
 
     if 'Автор(ы), редакторы и рецензенты (если есть) материалов источника(ов):' in open(
@@ -114,9 +116,9 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
             '«Автор(ы), редакторы и рецензенты (если есть) материалов источника(ов):» contains in ' +
             filename_without_path)
     else:
-        log.error(
+        log.error(pyfancy().red().bold(
             filename_without_path +
-            ' not contains «Автор(ы), редакторы и рецензенты (если есть) материалов источника(ов):»')
+            ' not contains «Автор(ы), редакторы и рецензенты (если есть) материалов источника(ов):»'))
         authors_failure_tests = True
 
     if 'Ссылка(и) на источник(и):' in open(
@@ -125,9 +127,9 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
             '«Ссылка(и) на источник(и):» contains in ' +
             filename_without_path)
     else:
-        log.error(
+        log.error(pyfancy().red().bold(
             filename_without_path +
-            ' not contains «Ссылка(и) на источник(и):»')
+            ' not contains «Ссылка(и) на источник(и):»'))
         link_failure_tests = True
 
     if 'Постоянный адрес пакета:' in open(
@@ -136,9 +138,9 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
             '«Постоянный адрес пакета:» contains in ' +
             filename_without_path)
     else:
-        log.error(
+        log.error(pyfancy().red().bold(
             filename_without_path +
-            ' not contains «Постоянный адрес пакета:»')
+            ' not contains «Постоянный адрес пакета:»'))
         package_link_failure_tests = True
 
     if description_failure_tests \
@@ -155,8 +157,8 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
         head_failure_tests = True
 
 if not head_failure_tests:
-    log.notice('All files contains correct head data')
+    log.notice(pyfancy().green().bold('All files contains correct head data'))
 
 if head_failure_tests:
-    log.error('One or more packages not contains one or more head data. '
-              'Please, add correct head data to your package.')
+    log.error(pyfancy().red().bold('One or more packages not contains one or more head data. '
+                                   'Please, add correct head data to your package.'))

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 08:22:06
-# @Last Modified time: 2018-01-05 14:23:31
+# @Last Modified time: 2018-01-05 14:45:58
 """Body Checker.
 
 Check, that <body> contains in files.
@@ -34,7 +34,7 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
     if "<body>" in open(filename, encoding='windows-1251').read():
         log.debug(filename_without_path + " contains <body>")
     else:
-        log.error(pyfancy().red(
+        log.error(pyfancy().red().bold(
             "File " +
             filename_without_path +
             " not contain <body>. Please, add <body> in " +
@@ -43,7 +43,8 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
         body_failure_tests = True
 
 if body_failure_tests:
-    log.error(pyfancy().red("Not all files contains body. Please, correct it."))
+    log.error(pyfancy().red().bold(
+        "Not all files contains <body>. Please, correct it."))
 
 if not body_failure_tests:
-    log.notice(pyfancy().green("All files contains <body>"))
+    log.notice(pyfancy().green().bold("All files contains <body>"))

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 09:40:46
-# @Last Modified time: 2018-01-04 16:54:50
+# @Last Modified time: 2018-01-05 14:48:39
 """Asterisks Checker.
 
 Check, if astresks contains in each line of package for Eric room.
@@ -11,6 +11,8 @@ Do not check:
     2. <!-- comments -->.
 """
 import os
+
+from pyfancy import pyfancy
 # Do not use «from <module> import *»
 # http://bit.ly/2CuW5GS
 from eric_config import all_txt_in_eric_room_wihtout_subfolders
@@ -39,11 +41,11 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
             list_without_lines_with_body = submit_file_as_list[get_lines_with_body
                                                                + 1:]
         except ValueError:
-            log.error("If you see this message and, possibly, long output after them, "
-                      "your file " + filename_without_path + " not contains <body>. "
-                      "Please, add <body> to " + filename_without_path + " to correct place "
-                      "and rerun tests.")
-            # Full file check, that asterisks contains in file
+            log.error(pyfancy().red().bold("If you see this message and, possibly, long output after them, "
+                                           "your file " + filename_without_path + " not contains <body>. "
+                                           "Please, add <body> to " + filename_without_path + " to correct place "
+                                           "and rerun tests."))
+            # Check, that asterisks contains in full file
             list_without_lines_with_body = submit_file_as_list
 
         # Remove list item, contains «<!--»
@@ -71,15 +73,15 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
             # https://stackoverflow.com/a/13207725/5951529
             lines_without_asterisks_and_n_as_strings = str(
                 lines_without_asterisks_and_n)[1:-1]
-            log.error("This line(s) not contains asterisks: " +
-                      lines_without_asterisks_and_n_as_strings +
-                      " in " +
-                      filename_without_path)
+            log.error(pyfancy().red().bold("This line(s) not contains asterisks: " +
+                                           lines_without_asterisks_and_n_as_strings +
+                                           " in " +
+                                           filename_without_path))
             asterisks_failure_tests = True
 
 if asterisks_failure_tests:
-    log.error(
-        "One or more your files not contained asterisks. Please, correct your package.")
+    log.error(pyfancy().red().bold(
+        "One or more your files not contained asterisks. Please, correct your package."))
 
 if not asterisks_failure_tests:
-    log.notice("All needest lines contains asterisks")
+    log.notice(pyfancy().green().bold("All needest lines contains asterisks"))

@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 15:30:08
-# @Last Modified time: 2018-01-04 09:21:38
+# @Last Modified time: 2018-01-05 14:52:36
 """LanguageTool Python.
 
 LanguageTool wrapper for Python.
 """
+from pyfancy import pyfancy
+
 # Do not use «from <module> import *»
 # http://bit.ly/2CuW5GS
 from eric_config import all_txt_in_eric_room_wihtout_subfolders
@@ -43,13 +45,14 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
             filename_without_path +
             "\n\n")
     else:
-        log.warning(
-            "Detect error(s) or/and typo(s) in " + filename_without_path + "\n\n")
+        log.warning(pyfancy().red(
+            "Detect error(s) or/and typo(s) in " + filename_without_path + "\n\n"))
         languagetool_failure_tests = True
 
 if not languagetool_failure_tests:
-    log.notice("LanguageTool no detect errors and typos for all files.")
+    log.notice(pyfancy().green().bold(
+        "LanguageTool no detect errors and typos for all files"))
 
 if languagetool_failure_tests:
-    log.warning(
-        "LanguageTool detect error(s) or/and typo(s). Please, review it.")
+    log.warning(pyfancy().red(
+        "LanguageTool detect error(s) or/and typo(s). Please, review it."))

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Kristinita
 # @Date: 2018-01-02 09:40:46
-# @Last Modified time: 2018-01-05 14:33:57
+# @Last Modified time: 2018-01-05 14:44:40
 """Encoding checker.
 
 Check, that files in Windows-1251 encoding.
@@ -64,7 +64,7 @@ for filename in all_txt_in_eric_room_wihtout_subfolders:
                                              ", not in Windows-1251 encoding! Please, save " +
                                              filename_without_path + " in Windows-1251 encoding."))
         log.notice(pyfancy().green().bold("If encoding of file " + filename_without_path +
-                                          " is UTF-8 and you see message above for local wwtd testing, " +
+                                          " is UTF-8 and you see message above in local wwtd testing, " +
                                           filename_without_path +
                                           " automatically will converted from UTF-8 to Windows-1251."))
         encoding_failure_tests = True
