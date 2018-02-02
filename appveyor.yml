@@ -19,6 +19,7 @@ install:
   - cmd: "%PIP% install flake8"
   - cmd: "%PIP% install pydocstyle"
   - cmd: "%PIP% install pyroma"
+  - cmd: "%PIP% install setuptools"
   - cmd: "%PIP% install vulture"
 
 build_script:
