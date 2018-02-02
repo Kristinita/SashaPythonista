@@ -1,5 +1,0 @@
-[flake8]
-# PEP8 79 character limit is small
-# Lintly configuration
-# http://docs.lintly.com/#python-configuration
-max-line-length = 120

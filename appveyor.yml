@@ -3,7 +3,7 @@ environment:
   matrix:
 
     - PYTHON: "C:\\Python36-x64"
-      PYTHON_VERSION: "3.6.3"
+      PYTHON_VERSION: "3.6.4"
       PYTHON_ARCH: "64"
       PIP: "C:\\Python36-x64\\Scripts\\pip"
 
@@ -11,16 +11,20 @@ platform: x64
 
 install:
 
-  - cmd: "%PIP% install chardet"
-  - cmd: "%PIP% install clize"
-  - cmd: "%PIP% install colorama"
-  - cmd: "%PIP% install logbook"
-  - cmd: "%PIP% install pyfiglet"
-  - cmd: "%PIP% install termcolor"
+  # Needs %PIP% instead pip, because Python 2 by default, see:
+  # https://www.appveyor.com/docs/build-environment/#python
+  # https://ci.appveyor.com/project/Kristinita/erichek/build/1.0.3
+  - cmd: "%PIP% install flake8"
+  - cmd: "%PIP% install pydocstyle"
+  - cmd: "%PIP% install pyroma"
+  - cmd: "%PIP% install vulture"
 
 build_script:
 
-  # Needs Appveyor console set, see
+  # Needs AppVeyor console set, see:
   # https://stackoverflow.com/a/48093971/5951529
   - cmd: set PYTHONIOENCODING=utf-8
-  - cmd: "%PYTHON%\\python tests\\eric_run_tests.py"
+  - cmd: flake8 .
+  - cmd: pydocstyle
+  - cmd: pyroma .
+  - cmd: vulture .

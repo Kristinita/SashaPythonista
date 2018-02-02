@@ -1,14 +1,13 @@
 language: python
 python:
-  - "3.6.3"
-# command to install dependencies
+  - "3.6.4"
 install:
-  - pip install chardet
-  - pip install clize
-  - pip install colorama
-  - pip install logbook
-  - pip install pyfiglet
-  - pip install termcolor
-# command to run tests
+  - pip install flake8
+  - pip install pydocstyle
+  - pip install pyroma
+  - pip install vulture
 script:
-  - python "tests/eric_run_tests.py"
+  - flake8 .
+  - pydocstyle
+  - pyroma .
+  - vulture .
