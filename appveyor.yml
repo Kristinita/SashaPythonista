@@ -16,11 +16,11 @@ install:
   # Needs %PIP% instead pip, because Python 2 by default, see:
   # https://www.appveyor.com/docs/build-environment/#python
   # https://ci.appveyor.com/project/Kristinita/erichek/build/1.0.3
-  - cmd: "%PIP% install flake8"
-  - cmd: "%PIP% install pydocstyle"
-  - cmd: "%PIP% install pyroma"
-  - cmd: "%PIP% install setuptools"
-  - cmd: "%PIP% install vulture"
+  - cmd: PIP install flake8
+  - cmd: PIP install pydocstyle
+  - cmd: PIP install pyroma
+  - cmd: PIP install setuptools
+  - cmd: PIP install vulture
 
 build_script:
 
