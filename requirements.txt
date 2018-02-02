@@ -2,6 +2,7 @@
    clize
    colorama
    logbook
+   -e git+https://github.com/ilovecode1/Pyfancy-2/
    pyfiglet
    regex
    termcolor
