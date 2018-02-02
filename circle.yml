@@ -1,0 +1,17 @@
+machine:
+  python:
+    version: 3.6.4
+
+dependencies:
+  post:
+    - pip install flake8
+    - pip install pydocstyle
+    - pip install pyroma
+    - pip install vulture
+
+test:
+  override:
+    - flake8 .
+    - pydocstyle
+    - pyroma .
+    - vulture .
