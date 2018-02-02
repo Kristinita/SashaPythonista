@@ -11,6 +11,8 @@ platform: x64
 
 install:
 
+  - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%"
+
   # Needs %PIP% instead pip, because Python 2 by default, see:
   # https://www.appveyor.com/docs/build-environment/#python
   # https://ci.appveyor.com/project/Kristinita/erichek/build/1.0.3
