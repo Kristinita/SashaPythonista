@@ -10,6 +10,9 @@ platform: x64
 
 install:
 
+  # Needs, because will get messages as:
+  # «flake8 is not recognized»
+  # https://github.com/ogrisel/python-appveyor-demo/blob/master/appveyor.yml
   - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%"
 
   # Needs %PIP% instead pip, because Python 2 by default, see:
@@ -20,7 +23,7 @@ install:
   - cmd: pip install pyroma
   - cmd: pip install vulture
 
-test_script:
+build_script:
 
   # Needs AppVeyor console set, see:
   # https://stackoverflow.com/a/48093971/5951529
