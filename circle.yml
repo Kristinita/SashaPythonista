@@ -7,6 +7,7 @@ dependencies:
     - pip install flake8
     - pip install pydocstyle
     - pip install pyroma
+    - pip install -U setuptools
     - pip install vulture
 
 test:
